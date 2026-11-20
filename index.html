@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MoveMorelia · Prototipo interactivo</title>
+<meta name="description" content="Prototipo de MoveMorelia, la app del transporte público de Morelia para estudiantes y trabajadores. Proyecto escolar de Tecmilenio Campus Morelia con datos de ejemplo.">
+<meta name="theme-color" content="#1E6AE6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MoveMorelia">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="MoveMorelia · Prototipo interactivo">
+<meta property="og:description" content="Prototipo de MoveMorelia, la app del transporte público de Morelia para estudiantes y trabajadores. Proyecto escolar de Tecmilenio Campus Morelia con datos de ejemplo.">
+<meta property="og:url" content="https://adriangtzgnz-del.github.io/movemorelia/">
+<meta property="og:image" content="https://adriangtzgnz-del.github.io/movemorelia/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="bus" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6.5 3h11A2.5 2.5 0 0 1 20 5.5V16a2 2 0 0 1-1.5 1.94V20H16v-2H8v2H5.5v-2.06A2 2 0 0 1 4 16V5.5A2.5 2.5 0 0 1 6.5 3zM6 6.5V11h12V6.5zM7.5 13.2a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6zm9 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z"/></symbol>
+<symbol id="car" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7.3 5h9.4a2 2 0 0 1 1.85 1.24L20 10a2 2 0 0 1 1 1.73V17h-2v2.2h-2.6V17H7.6v2.2H5V17H3v-5.27A2 2 0 0 1 4 10l1.45-3.76A2 2 0 0 1 7.3 5zM6.4 10h11.2l-1.1-3H7.5zM6.5 12.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6zm11 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z"/></symbol>
+<symbol id="tax" viewBox="0 0 24 24"><path d="M9.5 1.8h5V4h-5z"/><use href="#car"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></symbol>
+<symbol id="staro" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="usr" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm-8 9c0-4 3.6-7 8-7s8 3 8 7z"/></symbol>
+<symbol id="hom" viewBox="0 0 24 24"><path d="M12 3l9 8h-2.5v9h-5v-6h-3v6h-5v-9H3z"/></symbol>
+<symbol id="lst" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/></g><circle cx="4.5" cy="6" r="1.6"/><circle cx="4.5" cy="12" r="1.6"/><circle cx="4.5" cy="18" r="1.6"/></symbol>
+<symbol id="rt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5V12a3 3 0 0 0 3 3h6.5"/></g></symbol>
+<symbol id="sch" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20"/></g></symbol>
+<symbol id="loc" viewBox="0 0 24 24"><path d="M21 3 3 10.5l7.5 2.9L13.4 21z"/></symbol>
+<symbol id="chv" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="bk" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="clk" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></g></symbol>
+<symbol id="ppl" viewBox="0 0 24 24"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm-7 9c0-3.5 3.1-6 7-6s7 2.5 7 6zm14.5-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm1 2c2.6.3 4.5 2.4 4.5 5v2h-3.5c0-2.6-1-4.9-2.6-6.4z"/></symbol>
+<symbol id="mapi" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 6l6-2.5 6 2.5 6-2.5v14.5L15 20.5l-6-2.5-6 2.5zm6 0v10l6 2.5v-10z"/></symbol>
+<symbol id="swp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v15M4 8l4-4 4 4M16 20V5M12 16l4 4 4-4"/></g></symbol>
+<symbol id="wlk" viewBox="0 0 24 24"><path d="M13.5 5.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM10 8l-3 2v4h2v-3l1.4-.9-1.6 8.4L6 22h2.4l2.2-3 1.4 1.5V22h2v-2.4l-2-2.2.7-3.4 1.3 1.5H18v-2h-3l-2-3-1.5-.9L10 8z"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+<symbol id="bell" viewBox="0 0 24 24"><path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5v4.2L3.6 16.6c-.4.7.1 1.4.9 1.4h15c.8 0 1.3-.7.9-1.4l-1.9-3.4V9A6.5 6.5 0 0 0 12 2.5zM9.5 19.5a2.5 2.5 0 0 0 5 0z"/></symbol>
+<symbol id="bello" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6v4.4L4.2 17h15.6L18 13.4V9a6 6 0 0 0-6-6z"/><path d="M9.8 20a2.3 2.3 0 0 0 4.4 0"/></g></symbol>
+<symbol id="hist" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6L3.5 8.5"/><path d="M3.5 4v4.5H8M12 7.5V12l3 2"/></g></symbol>
+<symbol id="help" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 1c0 1.8-2.5 2.2-2.5 4"/></g><circle cx="12" cy="17.3" r="1.3"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/></g><circle cx="12" cy="7.6" r="1.4"/></symbol>
+<symbol id="chk" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4.5 5h15A2.5 2.5 0 0 1 22 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16.5v-9A2.5 2.5 0 0 1 4.5 5zM4 9v2h16V9zm2 5v2h4v-2z"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="txt" viewBox="0 0 24 24"><path d="M3 19 8 5h2l5 14h-2.3l-1.3-3.8H6.6L5.3 19zm4.3-5.8h3.4L9 8.3zM16 19l3-8.5h1.6L23.5 19h-1.9l-.7-2h-3.1l-.7 2zm2.4-3.6h2l-1-3z"/></symbol>
+<symbol id="flag" viewBox="0 0 24 24"><path d="M5 2.5h2V4h11l-2.5 4.5L18 13H7v8.5H5z"/></symbol>
+<symbol id="nav" viewBox="0 0 24 24"><path d="M12 2.5 20 21l-8-4-8 4z"/></symbol>
+<symbol id="mm" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 1.5a8 8 0 0 1 8 8c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 8-8zM8 13V6.5l4 4 4-4V13h-2V10l-2 2-2-2v3z"/></symbol>
+<symbol id="warn" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.3 3.6a2 2 0 0 1 3.4 0l8.2 14a2 2 0 0 1-1.7 3H3.8a2 2 0 0 1-1.7-3zM11 9v5h2V9zm0 6.5v2h2v-2z"/></symbol>
+<symbol id="school" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2V17c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.8l-7 3.8z"/></symbol>
+<symbol id="work" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M9 3h6a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v4H2V8a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 3h6V5H9zM2 13.5h8V15h4v-1.5h8V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="spk" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<div class="page-wrap">
+  <aside class="panel" aria-label="Guía de la demo">
+    <div class="pbrand"><span class="plogo"><svg aria-hidden="true"><use href="#mm"/></svg></span><div><b>MoveMorelia</b><span>Demo interactiva</span></div></div>
+    <h1>La app, en tus manos.</h1>
+    <p class="plead">Para estudiantes y trabajadores de Morelia. Los camiones, taxis y autos se mueven solos, te avisa si hay retrasos y tiene un modo fácil para personas mayores.</p>
+    <section class="pcard">
+      <div class="phead"><h2>Pruébalo</h2><span id="gcount">0 de 6</span></div>
+      <div class="pbar"><i id="gbar"></i></div>
+      <ol class="guide" id="guide"></ol>
+    </section>
+    <section class="pcard team">
+      <h2>Equipo</h2>
+      <ul>
+        <li><i style="background:#5AA9FF">A</i><span><b>Adrián</b>Apertura e identidad</span></li>
+        <li><i style="background:#7FDBFF">M</i><span><b>María</b>Mapa interactivo</span></li>
+        <li><i style="background:#FFC93C">T</i><span><b>Tyson</b>Lista de transportes</span></li>
+        <li><i style="background:#45E08E">V</i><span><b>Victoria</b>Detalles del vehículo</span></li>
+        <li><i style="background:#AE9FFF">S</i><span><b>Santiago</b>Planificador de rutas</span></li>
+      </ul>
+    </section>
+    <div class="pfoot"><div class="pbtns"><button class="preset" type="button" data-act="tutorial">Ver tutorial</button><button class="preset" type="button" data-act="sim-delay">Simular retraso</button><button class="preset" type="button" data-act="reset">Reiniciar demo</button></div><span>Datos simulados. Rutas, horarios y conductores son de ejemplo.</span></div>
+  </aside>
+
+  <div class="stagebox" id="stagebox">
+    <div class="devwrap" id="devwrap">
+      <div class="device" id="device">
+        <div class="app" id="app">
+          <div class="island" aria-hidden="true"></div>
+          <div class="sbar" aria-hidden="true"><span id="clock">9:41</span><span class="sic"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><i class="bat"></i></span></div>
+
+          <div class="views">
+            <!-- MAPA -->
+            <section class="view v-map on" id="v-map" aria-label="Mapa">
+              <header class="hd"><b>MoveMorelia</b><div class="hbs"><button class="hb" type="button" data-act="inbox" aria-label="Avisos"><svg><use href="#bell"/></svg><i class="udot" hidden></i></button><button class="hb" type="button" data-act="menu" aria-label="Abrir menú"><svg><use href="#menu"/></svg></button></div></header>
+              <div class="mapbox"><svg id="map" class="map" role="img" aria-label="Mapa de Morelia con vehículos en tiempo real"></svg></div>
+              <button class="msearch" type="button" data-act="search-map"><svg><use href="#sch"/></svg><span>¿A dónde vas?</span></button>
+              <div class="mchips chips" id="mchips"></div>
+              <div class="tripbar" id="tripbar" hidden></div>
+              <button class="fab" type="button" data-act="locate" aria-label="Centrar en mi ubicación"><svg><use href="#loc"/></svg></button>
+              <div class="sheet hide" id="msheet"></div>
+            </section>
+
+            <!-- LISTA -->
+            <section class="view v-list" id="v-list" aria-label="Transportes cerca de ti">
+              <header class="hd"><b>MoveMorelia</b><div class="hbs"><button class="hb" type="button" data-act="inbox" aria-label="Avisos"><svg><use href="#bell"/></svg><i class="udot" hidden></i></button><button class="hb" type="button" data-act="menu" aria-label="Abrir menú"><svg><use href="#menu"/></svg></button></div></header>
+              <div class="lsearch"><svg><use href="#sch"/></svg><input id="lq" type="search" placeholder="Buscar ruta o destino" autocomplete="off" aria-label="Buscar ruta o destino"></div>
+              <div class="chips lchips" id="lchips"></div>
+              <div class="lhead"><b>Cerca de ti</b><span class="live"><i></i>En vivo</span></div>
+              <div class="scroll" id="llist"></div>
+            </section>
+
+            <!-- RUTAS -->
+            <section class="view v-plan" id="v-plan" aria-label="Planificador de rutas">
+              <header class="hd"><b>MoveMorelia</b><div class="hbs"><button class="hb" type="button" data-act="inbox" aria-label="Avisos"><svg><use href="#bell"/></svg><i class="udot" hidden></i></button><button class="hb" type="button" data-act="menu" aria-label="Abrir menú"><svg><use href="#menu"/></svg></button></div></header>
+              <div class="od">
+                <button class="odr" type="button" data-act="pick-origin"><span class="gdot"></span><span id="po">Tu ubicación actual</span></button>
+                <button class="odr" type="button" data-act="pick-dest"><svg><use href="#pin"/></svg><span id="pd" class="ph">¿A dónde vas?</span></button>
+                <button class="swp" type="button" data-act="swap" aria-label="Intercambiar origen y destino"><svg><use href="#swp"/></svg></button>
+              </div>
+              <div class="ptabs" id="ptabs" role="tablist"></div>
+              <div class="scroll" id="plist"></div>
+            </section>
+
+            <!-- FAVORITOS -->
+            <section class="view v-fav" id="v-fav" aria-label="Favoritos">
+              <header class="hd"><b>Favoritos</b><div class="hbs"><button class="hb" type="button" data-act="inbox" aria-label="Avisos"><svg><use href="#bell"/></svg><i class="udot" hidden></i></button><button class="hb" type="button" data-act="menu" aria-label="Abrir menú"><svg><use href="#menu"/></svg></button></div></header>
+              <div class="scroll" id="flist"></div>
+            </section>
+
+            <!-- PERFIL -->
+            <section class="view v-prof" id="v-prof" aria-label="Perfil">
+              <header class="hd"><b>Perfil</b><div class="hbs"><button class="hb" type="button" data-act="inbox" aria-label="Avisos"><svg><use href="#bell"/></svg><i class="udot" hidden></i></button><button class="hb" type="button" data-act="menu" aria-label="Abrir menú"><svg><use href="#menu"/></svg></button></div></header>
+              <div class="scroll" id="prof"></div>
+            </section>
+          </div>
+
+          <nav class="nav" id="nav" aria-label="Secciones">
+            <button type="button" data-tab="map" class="on"><svg><use href="#pin"/></svg>Mapa</button>
+            <button type="button" data-tab="list"><svg><use href="#lst"/></svg>Cerca</button>
+            <button type="button" data-tab="plan"><svg><use href="#rt"/></svg>Rutas</button>
+            <button type="button" data-tab="fav"><svg><use href="#star"/></svg>Favoritos</button>
+            <button type="button" data-tab="prof"><svg><use href="#usr"/></svg>Perfil</button>
+          </nav>
+
+          <div class="pages" id="pages"></div>
+          <div class="drawer" id="drawer" hidden></div>
+          <div class="modal" id="modal" hidden></div>
+          <div class="notif" id="notif" role="status" aria-live="polite"></div>
+          <div class="splash" id="splash"><div><span class="slogo"><svg><use href="#mm"/></svg></span><b>MoveMorelia</b><small>Para estudiantes y trabajadores</small></div></div>
+          <div class="hi" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="core.js"></script>
+<script src="map.js"></script>
+<script src="app.js"></script>
+
+</body></html>
